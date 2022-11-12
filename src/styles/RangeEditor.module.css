@@ -1,0 +1,76 @@
+.rangeEditorContainer {
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  font-size: 0.8rem;
+  user-select: none;
+}
+
+.saveContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.saveContainer > div {
+  background-color: var(--color-button-dark);
+  width: 150px;
+  padding-block: 5px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.saveContainer > div:hover {
+  background-color: var(--color-main-accent);
+  color: black;
+}
+
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.leftPanel > div {
+  background-color: var(--color-button-dark);
+  width: 150px;
+  padding-block: 5px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.leftPanel > div:hover {
+  background-color: var(--color-main-accent);
+  color: black;
+}
+
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rightPanel > div {
+  background-color: var(--color-button-dark);
+  width: 100px;
+  padding-block: 5px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.rightPanel > div:hover {
+  background-color: var(--color-combos-grid);
+}
+
+.centerPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected {
+  background-color: var(--color-main-accent) !important;
+  color: black;
+}

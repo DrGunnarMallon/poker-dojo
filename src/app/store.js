@@ -1,8 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { configureStore } from "@reduxjs/toolkit";
+
+import mouseStateReducer from "../features/mouseState/mouseStateSlice";
+import rangesReducer from "../features/ranges/rangesSlice";
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    mouseState: mouseStateReducer,
+    ranges: rangesReducer,
   },
 });

@@ -1,0 +1,4 @@
+.comboMatrix {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+}

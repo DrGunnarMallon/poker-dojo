@@ -1,0 +1,32 @@
+.headerContainer {
+  background-color: var(--color-secondary-dark);
+  color: var(--color-main-white);
+  display: flex;
+  padding-block: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Inter";
+  position: sticky;
+}
+
+.logo {
+  flex: 1;
+  padding-inline: 5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.menu {
+  display: flex;
+  font-size: 0.9rem;
+}
+
+.menu > div {
+  padding-inline: 1rem;
+}
+
+.login {
+  padding-inline: 7rem 3rem;
+  color: var(--color-main-white);
+  font-size: 0.9rem;
+}
