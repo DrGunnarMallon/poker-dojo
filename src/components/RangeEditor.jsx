@@ -79,3 +79,5 @@ function RangeEditor() {
 }
 
 export default RangeEditor;
+
+// Just making a difference
