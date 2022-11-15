@@ -1,21 +1,17 @@
 import React from "react";
 
-import {
-  resetRange,
-  changeCurrentPosition,
-  changeCurrentAction,
-} from "../features/ranges/rangesSlice";
-import { useDispatch, useSelector } from "react-redux";
-
-import styles from "../styles/RangeEditor.module.css";
-import RangeMatrix from "../features/ranges/RangeMatrix";
-
+import { useRangeStore } from "../stores/useRangeStore";
+import RangeMatrix from "./RangeMatrix";
 import { allRangeLabels } from "../utils/Constants";
 
+import styles from "../styles/RangeEditor.module.css";
+
 function RangeEditor() {
-  const currentPosition = useSelector((state) => state.ranges.currentPosition);
-  const currentAction = useSelector((state) => state.ranges.currentAction);
-  const dispatch = useDispatch();
+  const currentAction = useRangeStore((state) => state.currentAction);
+  const currentPosition = useRangeStore((state) => state.currentPosition);
+  const resetRange = useRangeStore((state) => state.resetRange);
+  const changeCurrentPosition = useRangeStore((state) => state.changeCurrentPosition);
+  const changeCurrentAction = useRangeStore((state) => state.changeCurrentAction);
 
   const allPositions = allRangeLabels[currentAction];
 
@@ -23,31 +19,31 @@ function RangeEditor() {
     <div className={styles.rangeEditorContainer}>
       <section className={styles.leftPanel}>
         <div
-          onClick={() => dispatch(changeCurrentAction("RFI"))}
+          onClick={() => changeCurrentAction("RFI")}
           className={`${currentAction === "RFI" ? styles.selected : ""}`}
         >
           Open raise
         </div>
         <div
-          onClick={() => dispatch(changeCurrentAction("BET3"))}
+          onClick={() => changeCurrentAction("BET3")}
           className={`${currentAction === "BET3" ? styles.selected : ""}`}
         >
           3-bet
         </div>
         <div
-          onClick={() => dispatch(changeCurrentAction("CALL3BET"))}
+          onClick={() => changeCurrentAction("CALL3BET")}
           className={`${currentAction === "CALL3BET" ? styles.selected : ""}`}
         >
           Call 3-bet/4-bet
         </div>
         <div
-          onClick={() => dispatch(changeCurrentAction("DEFEND"))}
+          onClick={() => changeCurrentAction("DEFEND")}
           className={`${currentAction === "DEFEND" ? styles.selected : ""}`}
         >
           Defend BB
         </div>
         <div
-          onClick={() => dispatch(changeCurrentAction("CUSTOM"))}
+          onClick={() => changeCurrentAction("CUSTOM")}
           className={`${currentAction === "CUSTOM" ? styles.selected : ""}`}
         >
           Custom
@@ -57,8 +53,7 @@ function RangeEditor() {
         <RangeMatrix />
         <section className={styles.saveContainer}>
           <div>Save Range</div>
-          <div>Save All Ranges</div>
-          <div onClick={(e) => dispatch(resetRange())} className={styles.resetButton}>
+          <div onClick={resetRange} className={styles.resetButton}>
             Reset
           </div>
         </section>
@@ -67,7 +62,7 @@ function RangeEditor() {
         {allPositions.map((position) => (
           <div
             key={position}
-            onClick={() => dispatch(changeCurrentPosition(position))}
+            onClick={() => changeCurrentPosition(position)}
             className={`${currentPosition === position ? styles.selected : ""}`}
           >
             {position}
@@ -79,5 +74,3 @@ function RangeEditor() {
 }
 
 export default RangeEditor;
-
-// Just making a difference

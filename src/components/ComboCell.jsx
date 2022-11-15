@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "../../styles/ComboCell.module.css";
+import styles from "../styles/ComboCell.module.css";
 
 function ComboCell({
   value,
