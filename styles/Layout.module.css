@@ -1,0 +1,11 @@
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.mainContainer {
+  flex: 1;
+  background-color: #141414;
+  color: white;
+}

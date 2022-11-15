@@ -3,19 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@next-auth/mongodb-adapter": "^1.1.1",
     "dotenv": "^16.0.3",
     "eslint": "^8.27.0",
     "eslint-config-next": "^13.0.3",
+    "immer": "^9.0.16",
+    "mongodb": "^4.11.0",
     "next": "^13.0.3",
     "next-auth": "^4.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.6.0",
+    "vercel": "^28.5.1",
     "zustand": "^4.1.4"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "eslintConfig": {
     "extends": [
