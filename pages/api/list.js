@@ -1,19 +1,12 @@
 import clientPromise from "../../lib/mongodb";
 
 export default async function handler(request, response) {
+  console.log("data being fetched");
   try {
     const mongoClient = await clientPromise;
-    const db = mongoClient.db("sample_restaurants");
-    const collection = db.collection("restaurants");
-    const results = await collection
-      .find({})
-      .project({
-        grades: 0,
-        borough: 0,
-        restaurant_id: 0,
-      })
-      .limit(10)
-      .toArray();
+    const db = mongoClient.db("preflop-dojo");
+    const collection = db.collection("ranges");
+    const results = await collection.find({ email: "gunnar@email.com" }).toArray();
 
     response.status(200).json(results);
   } catch (e) {

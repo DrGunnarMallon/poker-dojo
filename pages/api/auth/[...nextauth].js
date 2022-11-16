@@ -31,7 +31,6 @@ export default NextAuth({
   },
   theme: {
     colorScheme: "auto",
-    brandColor: "#f6c466",
   },
   adapter: MongoDBAdapter(clientPromise),
   session: {
@@ -40,6 +39,18 @@ export default NextAuth({
     updateAge: 24 * 60 * 60,
     generateSessioToken: () => {
       return randomUUID?.() ?? randomBytes(32).toString("hex");
+    },
+  },
+  callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+      const isAllowedToSignIn = true;
+
+      if (isAllowedToSignIn) {
+        console.log(`Signed in: ${user.name}`);
+        return true;
+      } else {
+        return false;
+      }
     },
   },
 });

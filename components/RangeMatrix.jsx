@@ -1,52 +1,47 @@
-import React from "react";
-import { useMouseStore } from "../stores/useMouseStore";
-import { useRangeStore } from "../stores/useRangeStore";
-import styles from "../styles/ComboMatrix.module.css";
-import ComboCell from "./ComboCell";
-import { comboRange } from "../lib/constants";
+import React from 'react';
+import { useMouseStore } from '../stores/useMouseStore';
+import styles from '../styles/ComboMatrix.module.css';
+import ComboCell from './ComboCell';
+import { comboRange } from '../lib/constants';
+import { useUserStore } from '../stores/useUserStore';
 
 function RangeMatrix({ editable }) {
-  const mouseState = useMouseStore((state) => state.mouse);
-  const addState = useMouseStore((state) => state.add);
-  const rangeState = useRangeStore((state) => state.currentRange);
-  const addCombo = useRangeStore((state) => state.addCombo);
-  const removeCombo = useRangeStore((state) => state.removeCombo);
-  const mouseDownEvent = useMouseStore((state) => state.mouseDown);
-  const mouseUpEvent = useMouseStore((state) => state.mouseUp);
-  const adding = useMouseStore((state) => state.adding);
-  const deleting = useMouseStore((state) => state.deleting);
+  const user = useUserStore();
+  const mouseState = useMouseStore();
 
-  const isComboInRange = (combo) => (rangeState[comboRange.indexOf(combo)].value > 0 ? true : false);
+  const isComboInRange = (combo) =>
+    user.ranges[user.currentAction][user.currentPosition][comboRange.indexOf(combo)].value > 0 ? true : false;
 
   const handleComboChange = (e) => {
-    if (mouseState === true) {
-      addState ? addCombo(e.target.innerText) : removeCombo(e.target.innerText);
+    if (mouseState.mouse === true) {
+      mouseState.add ? user.addRangeCombo(e.target.innerText) : user.removeRangeCombo(e.target.innerText);
     }
   };
 
   const handleMouseDown = (e) => {
-    mouseDownEvent();
-
+    mouseState.mouseDown();
     if (isComboInRange(e.target.innerText)) {
-      deleting();
-      removeCombo(e.target.innerText);
+      mouseState.deleting();
+      user.removeRangeCombo(e.target.innerText);
     } else {
-      adding();
-      addCombo(e.target.innerText);
+      mouseState.adding();
+      user.addRangeCombo(e.target.innerText);
     }
   };
 
   return (
     <>
-      <div className={styles.comboMatrix} onMouseLeave={() => mouseUpEvent()}>
+      <div className={styles.comboMatrix} onMouseLeave={() => mouseState.mouseUp()}>
         {comboRange.map((combo) => (
           <ComboCell
             value={combo}
             editable={editable}
             key={combo}
-            selected={rangeState && rangeState[comboRange.indexOf(combo)].value}
+            selected={
+              user.ranges && user.ranges[user.currentAction][user.currentPosition][comboRange.indexOf(combo)].value
+            }
             onMouseDown={handleMouseDown}
-            onMouseUp={mouseUpEvent}
+            onMouseUp={mouseState.mouseUp}
             onMouseOver={handleComboChange}
           />
         ))}

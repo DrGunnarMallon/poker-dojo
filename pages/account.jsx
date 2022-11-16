@@ -1,26 +1,20 @@
 import React from "react";
 import { useSession, signOut, getSession } from "next-auth/react";
 
-import styles from "../src/styles/account.module.css";
+import styles from "../styles/account.module.css";
 
-const account = ({ session }) => {
-  //   const { data: session, status } = useSession();
+import { useMongoStore } from "../stores/useMongoStore";
+// import clientPromise from "../lib/mongodb";
+
+const Account = ({ session }) => {
+  const signedIn = useMongoStore((state) => state.signedIn);
+  const signIn = useMongoStore((state) => state.signIn);
+  if (!signedIn) {
+    signIn();
+  }
 
   if (session) {
-    return (
-      <div className={styles.accountContainer}>
-        {/* <h1>Account</h1> */}
-        {/* <p>Welcome, {session.user.name}</p> */}
-        {/* <img
-          src={session.user.image}
-          height='100px'
-          width='100px'
-          style={{ borderRadius: "100%" }}
-        />
-        <br />
-        <button onClick={() => signOut()}>Sign out</button> */}
-      </div>
-    );
+    return <div className={styles.accountContainer}>The RFI for {session.user.name} is:</div>;
   }
 
   return (
@@ -30,7 +24,7 @@ const account = ({ session }) => {
   );
 };
 
-export default account;
+export default Account;
 
 export const getServerSideProps = async (context) => {
   const session = await getSession(context);

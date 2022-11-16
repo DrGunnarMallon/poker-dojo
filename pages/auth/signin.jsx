@@ -1,10 +1,9 @@
 import { getProviders, signIn } from "next-auth/react";
-import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
 import { GrFacebookOption } from "react-icons/gr";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
 
-import styles from "../../src/styles/SignIn.module.css";
+import styles from "../../styles/SignIn.module.css";
 
 export default function SignIn({ providers }) {
   return (

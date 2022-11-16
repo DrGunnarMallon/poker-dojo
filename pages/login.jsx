@@ -1,28 +1,22 @@
 import React from "react";
 
+import Router from "next/router";
+
 import { useSession, signIn, signOut } from "next-auth/react";
 
-function login() {
-  const { data: session } = useSession();
+function Login() {
+  const { status } = useSession({
+    require: true,
+    onUnauthenticated() {
+      Router.push("/");
+    },
+  });
 
-  if (session) {
-    return (
-      <div>
-        <p>
-          Welcome, {session.user.name} [{session.user.email}]
-        </p>
-        <img src={session.user.image} />
-        <button onClick={() => signOut()}>Sign out</button>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <p>You are not signed in.</p>
-        <button onClick={() => signIn()}>Sign In</button>
-      </div>
-    );
+  if (status === "authenticated") {
+    Router.push("/account");
   }
+
+  return true;
 }
 
-export default login;
+export default Login;
