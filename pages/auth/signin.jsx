@@ -8,18 +8,12 @@ import styles from '../../styles/SignIn.module.css';
 import { useUserStore } from '../../stores/useUserStore';
 
 export default function SignIn({ providers }) {
-  currentPage = useUserStore((state) => state.currentPage);
-  console.log('Useing current page: ', currentPage);
-
   return (
     <div className={styles.signInContainer}>
       <h1>Sign In</h1>
       <div className={styles.rightPanel}>
         {providers?.google && (
-          <div
-            className={styles.loginProvider}
-            onClick={() => signIn(providers.google.id, { callbackUrl: currentPage })}
-          >
+          <div className={styles.loginProvider} onClick={() => signIn(providers.google.id, { callbackUrl: '/' })}>
             <div className={styles.loginIcon}>
               <FcGoogle />
             </div>
