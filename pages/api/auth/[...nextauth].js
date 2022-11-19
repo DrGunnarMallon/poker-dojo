@@ -1,10 +1,10 @@
-import NextAuth from "next-auth/next";
-import GoogleProvider from "next-auth/providers/google";
-import FacebookProvider from "next-auth/providers/facebook";
-import DiscordProvider from "next-auth/providers/discord";
-import TwitterProvider from "next-auth/providers/twitter";
-import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
-import clientPromise from "../../../lib/mongodb";
+import NextAuth from 'next-auth/next';
+import GoogleProvider from 'next-auth/providers/google';
+import FacebookProvider from 'next-auth/providers/facebook';
+import DiscordProvider from 'next-auth/providers/discord';
+import TwitterProvider from 'next-auth/providers/twitter';
+import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
+import clientPromise from '../../../lib/mongodb';
 
 export default NextAuth({
   providers: [
@@ -27,18 +27,18 @@ export default NextAuth({
   ],
   secret: process.env.JWT_SECRET,
   pages: {
-    signIn: "/auth/signin",
+    signIn: '/auth/signin',
   },
   theme: {
-    colorScheme: "auto",
+    colorScheme: 'auto',
   },
   adapter: MongoDBAdapter(clientPromise),
   session: {
-    strategy: "database",
+    strategy: 'database',
     maxAge: 30 * 24 * 60 * 60,
     updateAge: 24 * 60 * 60,
     generateSessioToken: () => {
-      return randomUUID?.() ?? randomBytes(32).toString("hex");
+      return randomUUID?.() ?? randomBytes(32).toString('hex');
     },
   },
   callbacks: {
@@ -46,7 +46,6 @@ export default NextAuth({
       const isAllowedToSignIn = true;
 
       if (isAllowedToSignIn) {
-        console.log(`Signed in: ${user.name}`);
         return true;
       } else {
         return false;
