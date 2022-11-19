@@ -1,0 +1,19 @@
+Range Editor:
+
+- Enter range by string
+- Show number of combos
+- Show percentage of combos
+- Use slider to input range
+- Create custom ranges to drill
+- Add percentages
+
+Range Browser:
+
+- Create a range structure
+- Buy and sell your ranges (leaving feedback)
+- Export ranges (text, pdf, png)
+
+Settings:
+
+- Add setting menu in header
+- Change color setting

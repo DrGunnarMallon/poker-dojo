@@ -14,8 +14,9 @@
 
 .headerMenu {
   display: flex;
-  gap: 1rem;
-  color: #c9c9c9;
+  gap: 1.7rem;
+  color: #fff;
+  font-size: 1.1rem;
 }
 
 .headerLogin {

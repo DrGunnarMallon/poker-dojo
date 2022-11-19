@@ -17,7 +17,7 @@ export default function SignUp({ providers }) {
         <div className={styles.title}>Sign Up</div>
         <p>To store your ranges and practice progress, you need to sign into the Preflop Dojo.</p>
         <p>You can use your existing gmail or social media accounts for this.</p>
-        <p>Don't worry, we won't sell your data and you won't get any spam from us.</p>
+        <p>Do not worry, we will not sell your data and you will not get any spam from us.</p>
       </div>
       <div className={styles.rightPanel}>
         {providers?.google && (

@@ -3,7 +3,7 @@ import React from 'react';
 import { getSession } from 'next-auth/react';
 
 function index() {
-  return <div>Viewer</div>;
+  return <div>Browser</div>;
 }
 
 export default index;

@@ -17,7 +17,7 @@ function Header() {
       </div>
       <div className={styles.headerMenu}>
         <Link href="/editor">Range Editor</Link>
-        <Link href="/viewer">Range Viewer</Link>
+        <Link href="/browser">Range Browser</Link>
         <Link href="/trainer">Range Trainer</Link>
         <Link href="/pricing">Pricing</Link>
       </div>
