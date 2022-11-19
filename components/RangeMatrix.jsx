@@ -9,23 +9,26 @@ function RangeMatrix({ editable }) {
   const user = useUserStore();
   const mouseState = useMouseStore();
 
-  const isComboInRange = (combo) =>
-    user.ranges[user.currentAction][user.currentPosition][comboRange.indexOf(combo)].value > 0 ? true : false;
+  const isComboInRange = (combo) => (user.ranges[user.path][combo].value > 0 ? true : false);
 
   const handleComboChange = (e) => {
-    if (mouseState.mouse === true) {
-      mouseState.add ? user.addRangeCombo(e.target.innerText) : user.removeRangeCombo(e.target.innerText);
+    if (user.ranges[user.path]) {
+      if (mouseState.mouse === true) {
+        mouseState.add ? user.addRangeCombo(e.target.innerText) : user.removeRangeCombo(e.target.innerText);
+      }
     }
   };
 
   const handleMouseDown = (e) => {
-    mouseState.mouseDown();
-    if (isComboInRange(e.target.innerText)) {
-      mouseState.deleting();
-      user.removeRangeCombo(e.target.innerText);
-    } else {
-      mouseState.adding();
-      user.addRangeCombo(e.target.innerText);
+    if (user.ranges[user.path]) {
+      mouseState.mouseDown();
+      if (isComboInRange(e.target.innerText)) {
+        mouseState.deleting();
+        user.removeRangeCombo(e.target.innerText);
+      } else {
+        mouseState.adding();
+        user.addRangeCombo(e.target.innerText);
+      }
     }
   };
 
@@ -37,9 +40,7 @@ function RangeMatrix({ editable }) {
             value={combo}
             editable={editable}
             key={combo}
-            selected={
-              user.ranges && user.ranges[user.currentAction][user.currentPosition][comboRange.indexOf(combo)].value
-            }
+            selected={user.ranges[user.path] && user.ranges[user.path][combo]?.value}
             onMouseDown={handleMouseDown}
             onMouseUp={mouseState.mouseUp}
             onMouseOver={handleComboChange}

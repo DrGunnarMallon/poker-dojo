@@ -1,0 +1,47 @@
+.heroBanner {
+  background-image: url('/old_guy.png');
+  background-size: cover;
+  background-color: #b9a8ff;
+  color: #333;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  padding-bottom: 125px;
+  padding-inline: 3rem;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Merriweather';
+  color: #ffffff;
+}
+
+.heroSub {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #aaa;
+  font-family: 'Poppins';
+  padding-top: 7px;
+}
+
+.heroHook {
+  font-size: 2rem;
+  color: #ffffff;
+  padding-top: 100px;
+  font-family: 'Montserrat';
+  padding-left: 5rem;
+  line-height: 3.5rem;
+  font-weight: 500;
+}
+
+.heroHook > ul > li {
+  list-style: none;
+}
+
+.heroHook > ul > li:before {
+  content: '🔥';
+  margin-left: -20px;
+  margin-right: 10px;
+  font-size: 1.8rem;
+}

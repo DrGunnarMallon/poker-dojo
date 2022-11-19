@@ -3,17 +3,22 @@ import { FcGoogle } from 'react-icons/fc';
 import { GrFacebookOption } from 'react-icons/gr';
 import { FaDiscord, FaTwitter } from 'react-icons/fa';
 
-import styles from '../../styles/SignIn.module.css';
+import styles from '../../styles/SignUp.module.css';
 
 import { useUserStore } from '../../stores/useUserStore';
 
-export default function SignIn({ providers }) {
-  currentPage = useUserStore((state) => state.currentPage);
-  console.log('Useing current page: ', currentPage);
+export default function SignUp({ providers }) {
+  const currentPage = useUserStore((state) => state.currentPage);
+  console.log('Current page: ', currentPage);
 
   return (
-    <div className={styles.signInContainer}>
-      <h1>Sign In</h1>
+    <div className={styles.signUpContainer}>
+      <div className={styles.leftPanel}>
+        <div className={styles.title}>Sign Up</div>
+        <p>To store your ranges and practice progress, you need to sign into the Preflop Dojo.</p>
+        <p>You can use your existing gmail or social media accounts for this.</p>
+        <p>Don't worry, we won't sell your data and you won't get any spam from us.</p>
+      </div>
       <div className={styles.rightPanel}>
         {providers?.google && (
           <div
@@ -23,7 +28,7 @@ export default function SignIn({ providers }) {
             <div className={styles.loginIcon}>
               <FcGoogle />
             </div>
-            <div className={styles.loginText}>Sign in with Google</div>
+            <div className={styles.loginText}>Sign up with Google</div>
           </div>
         )}
 
@@ -32,7 +37,7 @@ export default function SignIn({ providers }) {
             <div className={styles.loginIcon}>
               <GrFacebookOption />
             </div>
-            <div className={styles.loginText}>Sign in with Facebook</div>
+            <div className={styles.loginText}>Sign up with Facebook</div>
           </div>
         )}
 
@@ -41,7 +46,7 @@ export default function SignIn({ providers }) {
             <div className={styles.loginIcon}>
               <FaDiscord />
             </div>
-            <div className={styles.loginText}>Sign in with Discord</div>
+            <div className={styles.loginText}>Sign up with Discord</div>
           </div>
         )}
 
@@ -50,7 +55,7 @@ export default function SignIn({ providers }) {
             <div className={styles.loginIcon}>
               <FaTwitter />
             </div>
-            <div className={styles.loginText}>Sign in with Twitter</div>
+            <div className={styles.loginText}>Sign up with Twitter</div>
           </div>
         )}
       </div>

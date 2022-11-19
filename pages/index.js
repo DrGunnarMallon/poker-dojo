@@ -1,25 +1,8 @@
-import Head from "next/head";
-import { useEffect, useState } from "react";
-import clientPromise from "../lib/mongodb";
+import Head from 'next/head';
 
-import { useMongoStore } from "../stores/useMongoStore";
+import styles from '../styles/Home.module.css';
 
-export default function Home({ isConnected }) {
-  const [entries, setEntries] = useState([]);
-  const signedIn = useMongoStore((state) => state.signedIn);
-  const signIn = useMongoStore((state) => state.signIn);
-
-  useEffect(() => {
-    if (!signedIn) {
-      (async () => {
-        const results = await fetch("/api/list?email:gunnar@email.com");
-        const resultsJson = await results.json();
-        setEntries(resultsJson);
-        signIn();
-      })();
-    }
-  }, [signedIn, signIn]);
-
+export default function Home() {
   return (
     <>
       <Head>
@@ -28,7 +11,18 @@ export default function Home({ isConnected }) {
         <link rel="icon" href="/chip.png" />
       </Head>
       <main>
-        <section>
+        <section className={styles.heroBanner}>
+          <div className={styles.heroTitle}>If this geezer can do it</div>
+          <div className={styles.heroSub}>You sure as shit can too.</div>
+          <div className={styles.heroHook}>
+            <ul>
+              <li>Unlimited Ranges</li>
+              <li>Drill any preflop position</li>
+              <li>Large library of ranges</li>
+            </ul>
+          </div>
+        </section>
+        {/* <section>
           <p>
             Learn those pesky preflop ranges - don't think about preflop and focus on post flop strategy all the way.
           </p>
@@ -36,31 +30,8 @@ export default function Home({ isConnected }) {
           <p>You can even train individual or custom ranges.</p>
           <p>GTO is great, but we all don't play GTO</p>
           <p>You can use and tweak pre-defined ranges or input your own</p>
-        </section>
-        <section>
-          Ranges:
-          {entries.map((entry) => (
-            <div key={Math.random()}>
-              {entry._id} - {entry.email} - {entry.name} - {entry.ranges.rfi}
-            </div>
-          ))}
-        </section>
+        </section> */}
       </main>
     </>
   );
-}
-
-export async function getServerSideProps(context) {
-  try {
-    await clientPromise;
-
-    return {
-      props: { isConnected: true },
-    };
-  } catch (e) {
-    console.error(e);
-    return {
-      props: { isConnected: false },
-    };
-  }
 }

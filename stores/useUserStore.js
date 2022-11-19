@@ -1,17 +1,20 @@
 import create from 'zustand';
 import produce from 'immer';
-import { getNewRange, getBlankRanges } from '../lib/range';
-import { allRangeLabels, comboRange } from '../lib/constants';
+import { getNewRange } from '../lib/range';
+import { comboRange } from '../lib/constants';
 
 export const useUserStore = create((set, get) => ({
   userName: '',
   userEmail: '',
   userImage: '/images/defaultAvatar.png',
+  currentPage: '/',
   isLoggedIn: false,
   premium: true,
-  ranges: getBlankRanges(),
-  currentAction: 'Open Raise',
-  currentPosition: 'UTG',
+  ranges: {},
+  path: '',
+  currentRange: {},
+  currentAction: '',
+  currentPosition: '',
 
   loginUser: (user) => set({}),
   logoutUser: (user) => set({}),
@@ -20,7 +23,7 @@ export const useUserStore = create((set, get) => ({
     const index = comboRange.indexOf(combo);
     set(
       produce((state) => {
-        state.ranges[state.currentAction][state.currentPosition][index].value = 1;
+        state.ranges[state.path][combo].value = 1;
       })
     );
   },
@@ -28,26 +31,46 @@ export const useUserStore = create((set, get) => ({
     const index = comboRange.indexOf(combo);
     set(
       produce((state) => {
-        state.ranges[state.currentAction][state.currentPosition][index].value = 0;
+        state.ranges[state.path][combo].value = 0;
       })
     );
   },
   resetRange: () => {
     set(
       produce((state) => {
-        state.ranges[state.currentAction][state.currentPosition] = getNewRange();
+        state.ranges[state.path] = getNewRange();
       })
     );
   },
   changeCurrentAction: (newAction) => {
     set({
-      currentPosition: allRangeLabels[newAction][0],
       currentAction: newAction,
+      path: `${newAction}`,
     });
   },
-  changeCurrentPosition: (newPosition) => {
+  changeCurrentPosition: (newPosition, path) => {
     set({
       currentPosition: newPosition,
+      path,
     });
+  },
+  setNewUser: (user) => {
+    set({
+      userName: user.name,
+      userEmail: user.email,
+      userImage: user.image,
+    });
+  },
+  setCurrentRange: (range) => {
+    set({ currentRange: range });
+  },
+  setPath: (path) => {
+    set({ path });
+  },
+  addRange: (path, range) => {
+    set({ ranges: { ...get().ranges, [path]: range } });
+  },
+  setCurrentPage: (page) => {
+    set({ currentPage: page });
   },
 }));

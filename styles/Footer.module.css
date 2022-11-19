@@ -1,4 +1,27 @@
 .footerContainer {
   height: 100px;
   background-color: #0c0c0c;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.socialMedia {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.instagram {
+  font-size: 1.6rem;
+  color: white;
+}
+
+.twitter {
+  font-size: 1.6rem;
+}
+
+.youtube {
+  font-size: 1.6rem;
 }
