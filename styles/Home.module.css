@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   padding-top: 100px;
   padding-bottom: 125px;
-  padding-inline: 3rem;
+  padding-inline: 7%;
 }
 
 .heroTitle {
@@ -44,4 +44,62 @@
   margin-left: -20px;
   margin-right: 10px;
   font-size: 1.8rem;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* background-color: #1a1727; */
+  background-color: #090909;
+}
+
+.homeContent {
+  flex: 1;
+  /* background-image: url('/transition.png'); */
+  background-repeat: no-repeat;
+  background-position: top left;
+  /* padding-top: 6rem; */
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: space-around;
+  padding-inline: 100px;
+  padding-block: 100px;
+  background-color: #1a1727;
+}
+
+.card {
+  border: 1px solid #555;
+  width: 350px;
+  border-radius: 10px 10px 5px 5px;
+  overflow: hidden;
+  box-shadow: 5px 5px 20px 5px rgba(255, 255, 255, 0.1);
+}
+
+.card > .cardTitle {
+  padding-inline: 20px;
+  padding-block: 10px 15px;
+  font-size: 2rem;
+  background-color: #b9a8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-family: 'Playfair Display';
+  font-weight: 100;
+}
+
+.card > .cardContent {
+  padding-block: 30px;
+  padding-inline: 20px;
+  font-size: 1.4rem;
+  font-family: 'Libre Baskerville';
+  line-height: 2.3rem;
+}
+
+.banner {
+  background-color: #090909;
+  padding-block: 100px;
 }

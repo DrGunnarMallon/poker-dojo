@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding-top: 3rem;
+  padding-top: 4rem;
 }
 
 .rightPanel {
@@ -16,11 +16,22 @@
 }
 
 .leftPanel {
+  font-family: 'Poppins';
   display: flex;
   flex-direction: column;
-  width: 200px;
-  justify-content: center;
-  align-items: center;
+  width: 500px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.leftPanel > p {
+  margin-block: 1rem;
+  font-size: 1.2rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 3rem;
 }
 
 .loginIcon {
@@ -35,31 +46,28 @@
 
 .loginText {
   font-weight: 600;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1;
+  color: #222;
 }
 
 .loginProvider {
   width: 250px;
   height: 50px;
   display: flex;
-  background-image: linear-gradient(to top left, #141414, #282828);
+  background-image: linear-gradient(to top left, #ccc, #fff 70%);
   /* background-color: #141414; */
   color: white;
   cursor: pointer;
   border: 1px solid rgb(68, 43, 5);
-  border-radius: 10px;
+  border-radius: 3px;
   overflow: hidden;
 }
 
 .loginProvider:hover {
-  background-image: linear-gradient(
-    to top left,
-    rgb(147, 90, 10),
-    rgb(238, 172, 78)
-  );
+  background-image: linear-gradient(to top left, rgb(147, 90, 10), rgb(238, 172, 78));
   border: 1px solid rgb(221, 153, 57);
 }
