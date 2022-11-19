@@ -25,7 +25,7 @@ export default NextAuth({
       clientSecret: process.env.TWITTER_CLIENT_SECRET,
     }),
   ],
-  secret: process.env.JWT_SECRET,
+  secret: '5b3e2fb1727f1c39c3dec43b9f3de03b',
   pages: {
     signIn: '/auth/signin',
   },
