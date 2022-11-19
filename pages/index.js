@@ -38,7 +38,7 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.banner}>
-          <p>GTO is great, but we all don't play GTO</p>
+          <p>GTO is great, but we all don&apos;t play GTO</p>
           <p>You can use and tweak pre-defined ranges or input your own</p>
         </div>
       </section>
