@@ -7,6 +7,8 @@ export default function Home() {
   return (
     <main className={styles.homeContainer}>
       <section className={styles.heroBanner}>
+        {/* <Image src="/geezer.jpg" alt="hero_image" layout="fill" objectFit="cover" /> */}
+
         <div className={styles.heroTitle}>If this geezer can do it</div>
         <div className={styles.heroSub}>You sure as shit can too.</div>
         <div className={styles.heroHook}>

@@ -1,13 +1,16 @@
 .heroBanner {
-  background-image: url('/old_guy.png');
+  background-image: url('/geezer.jpg');
   background-size: cover;
-  background-color: #b9a8ff;
+  /* background-color: #b9a8ff; */
   color: #333;
   background-position: bottom right;
   background-repeat: no-repeat;
   padding-top: 100px;
   padding-bottom: 125px;
   padding-inline: 7%;
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .heroTitle {
@@ -15,6 +18,7 @@
   font-weight: bold;
   font-family: 'Merriweather';
   color: #ffffff;
+  z-index: 1;
 }
 
 .heroSub {
@@ -80,15 +84,15 @@
 
 .card > .cardTitle {
   padding-inline: 20px;
-  padding-block: 10px 15px;
-  font-size: 2rem;
+  padding-block: 20px 25px;
+  font-size: 1.7rem;
   background-color: #b9a8ff;
   display: flex;
   justify-content: center;
   align-items: center;
   color: black;
-  font-family: 'Playfair Display';
-  font-weight: 100;
+  font-family: 'Merriweather';
+  font-weight: bold;
 }
 
 .card > .cardContent {

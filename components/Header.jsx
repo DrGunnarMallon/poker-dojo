@@ -12,6 +12,7 @@ function Header() {
     <div className={styles.headerContainer}>
       <div className={styles.headerLogo}>
         <Link href="/">
+          <Image src="/chip.png" alt="" height="50" width="50" />
           <Image src="/logo.png" alt="" height="64" width="210" />
         </Link>
       </div>

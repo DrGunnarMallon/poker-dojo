@@ -1,0 +1,44 @@
+.trainerContainer {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+.settingsContainer {
+  background-color: #222;
+  width: 320px;
+  padding: 20px;
+  height: 100%;
+}
+
+.actionContainer,
+.positionContainer,
+.villainPosition,
+.timers,
+.tables {
+  display: flex;
+  gap: 8px;
+  padding-block: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.actionContainer > div,
+.positionContainer > div,
+.villainPosition > div,
+.tables > div,
+.timers > div {
+  background-color: #444;
+  padding-inline: 8px;
+  padding-block: 2px;
+  font-size: 0.925rem;
+  border-radius: 3px;
+}
+
+.selected {
+  background-color: green !important;
+}
+
+.header {
+  margin-block: 1rem 0.5rem;
+}

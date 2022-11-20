@@ -10,6 +10,9 @@
 .headerLogo {
   flex: 1;
   padding-left: 2rem;
+  align-items: center;
+  display: flex;
+  padding-left: 100px;
 }
 
 .headerMenu {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import RangeMatrix from '../../components/RangeMatrix';
 import { useUserStore } from '../../stores/useUserStore';
@@ -13,9 +13,6 @@ import 'react-toastify/dist/ReactToastify.css';
 function RangeEditor({ session }) {
   const userPath = useUserStore((state) => state.path);
   const userRanges = useUserStore((state) => state.ranges);
-  const userCurrentPage = useUserStore((state) => state.currentPage);
-  const userSetPage = useUserStore((state) => state.setCurrentPage);
-  const userEmail = useUserStore((state) => state.email);
   const userChangeAction = useUserStore((state) => state.changeCurrentAction);
   const userChangePosition = useUserStore((state) => state.changeCurrentPosition);
   const userCurrentAction = useUserStore((state) => state.currentAction);
