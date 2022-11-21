@@ -6,6 +6,6 @@
 
 .mainContainer {
   flex: 1;
-  background-color: #141414;
-  color: white;
+  background-color: var(--clr-level-1);
+  color: var(--clr-level-10);
 }

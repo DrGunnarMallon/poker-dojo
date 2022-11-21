@@ -6,5 +6,5 @@
   align-items: center;
   gap: 1rem;
   font-size: 2rem;
-  font-family: 'Libre Baskerville';
+  font-family: var(--ff-text-main);
 }

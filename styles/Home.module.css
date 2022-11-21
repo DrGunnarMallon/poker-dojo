@@ -1,7 +1,6 @@
 .heroBanner {
   background-image: url('/geezer.jpg');
   background-size: cover;
-  /* background-color: #b9a8ff; */
   color: #333;
   background-position: bottom right;
   background-repeat: no-repeat;
@@ -16,24 +15,23 @@
 .heroTitle {
   font-size: 3rem;
   font-weight: bold;
-  font-family: 'Merriweather';
-  color: #ffffff;
-  z-index: 1;
+  font-family: var(--ff-header-big);
+  color: var(--clr-level-10);
 }
 
 .heroSub {
   font-size: 1.5rem;
   font-weight: 400;
-  color: #aaa;
+  color: var(--clr-primary-red);
   font-family: 'Poppins';
   padding-top: 7px;
 }
 
 .heroHook {
   font-size: 2rem;
-  color: #ffffff;
+  color: var(--clr-level-10);
   padding-top: 100px;
-  font-family: 'Montserrat';
+  font-family: var(--ff-header-big);
   padding-left: 5rem;
   line-height: 3.5rem;
   font-weight: 500;
@@ -47,23 +45,20 @@
   content: '🔥';
   margin-left: -20px;
   margin-right: 10px;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 }
 
 .homeContainer {
   display: flex;
   flex-direction: column;
   height: 100%;
-  /* background-color: #1a1727; */
-  background-color: #090909;
+  background-color: var(--clr-level-1);
 }
 
 .homeContent {
   flex: 1;
-  /* background-image: url('/transition.png'); */
   background-repeat: no-repeat;
   background-position: top left;
-  /* padding-top: 6rem; */
 }
 
 .cardContainer {
@@ -71,7 +66,7 @@
   justify-content: space-around;
   padding-inline: 100px;
   padding-block: 100px;
-  background-color: #1a1727;
+  background-color: var(--clr-level-2);
 }
 
 .card {
@@ -86,24 +81,24 @@
   padding-inline: 20px;
   padding-block: 20px 25px;
   font-size: 1.7rem;
-  background-color: #b9a8ff;
+  background-color: var(--clr-level-6);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
-  font-family: 'Merriweather';
+  color: var(--clr-level-10);
   font-weight: bold;
+  font-family: var(--ff-text-main);
 }
 
 .card > .cardContent {
   padding-block: 30px;
   padding-inline: 20px;
   font-size: 1.4rem;
-  font-family: 'Libre Baskerville';
   line-height: 2.3rem;
 }
 
 .banner {
-  background-color: #090909;
+  background-color: var(--clr-level-2);
   padding-block: 100px;
+  margin-top: 30px;
 }

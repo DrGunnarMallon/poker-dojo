@@ -10,15 +10,14 @@
 .saveContainer {
   display: flex;
   gap: 1rem;
-  color: black;
   display: flex;
   justify-content: center;
-  color: white;
+  color: var(--clr-level-10);
   margin-top: 1.5rem;
 }
 
 .saveContainer > div {
-  background-color: var(--color-button-dark);
+  background-color: var(--clr-level-3);
   width: 150px;
   padding-block: 5px;
   border-radius: 3px;
@@ -26,7 +25,8 @@
 }
 
 .saveContainer > div:hover {
-  background-color: var(--color-main-accent);
+  background-color: var(--clr-primary-red);
+  color: var(--clr-level-0);
 }
 
 .leftPanel {
@@ -38,7 +38,7 @@
 }
 
 .leftPanel > div {
-  background-color: var(--color-button-dark);
+  background-color: var(--clr-level-3);
   width: 150px;
   padding-block: 5px;
   border-radius: 3px;
@@ -46,8 +46,8 @@
 }
 
 .leftPanel > div:hover {
-  background-color: var(--color-main-accent);
-  color: black;
+  background-color: var(--clr-primary-red);
+  color: var(--clr-level-1);
 }
 
 .rightPanel {
@@ -59,7 +59,7 @@
 }
 
 .rightPanel > div {
-  background-color: var(--color-button-dark);
+  background-color: var(--clr-level-3);
   width: 100px;
   padding-block: 5px;
   border-radius: 3px;
@@ -67,7 +67,8 @@
 }
 
 .rightPanel > div:hover {
-  background-color: var(--color-combos-grid);
+  background-color: var(--clr-primary-red);
+  color: var(--clr-level-1);
 }
 
 .centerPanel {
@@ -79,8 +80,8 @@
 }
 
 .selected {
-  background-color: var(--color-main-accent) !important;
-  color: black;
+  background-color: var(--clr-primary-teal) !important;
+  color: var(--clr-level-1);
 }
 
 .title {
@@ -90,6 +91,6 @@
 }
 
 .titleText {
-  font-family: 'Poppins';
+  font-family: var(--ff-header-big);
   font-size: 2rem;
 }

@@ -5,7 +5,7 @@
 }
 
 .settingsContainer {
-  background-color: #222;
+  background-color: var(--clr-level-2);
   width: 320px;
   padding: 20px;
   height: 100%;
@@ -28,7 +28,7 @@
 .villainPosition > div,
 .tables > div,
 .timers > div {
-  background-color: #444;
+  background-color: var(--clr-level-4);
   padding-inline: 8px;
   padding-block: 2px;
   font-size: 0.925rem;
@@ -37,7 +37,8 @@
 }
 
 .selected {
-  background-color: green !important;
+  background-color: var(--clr-primary-red) !important;
+  color: var(--clr-level-0);
 }
 
 .header {

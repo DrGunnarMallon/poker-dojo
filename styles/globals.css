@@ -1,28 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Libre+Baskerville:wght@400;700&family=Merriweather:wght@300;400;700&family=Montserrat:wght@100;400;500;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;700&family=Libre+Baskerville:wght@400;700&family=Merriweather:wght@300;400;700&family=Montserrat:wght@100;400;700&family=PT+Serif:wght@400;700&family=Playfair+Display:wght@400;700&family=Raleway:wght@100;400;700&family=Roboto:wght@100;400;700&family=Source+Sans+Pro:wght@200;400;700&family=Source+Serif+Pro:wght@200;400;700&display=swap');
 
 :root {
-  --color-main-dark: #313131;
-  --color-secondary-dark: #131313;
-  --color-button-dark: #2e2e2e;
-  --color-main-light: #c0a88b;
-  /* --color-main-accent: #fab041; */
-  --color-main-accent: #F1B3FF;
-  --color-main-white: #b1b1b1;
-  --color-main-gray: #e1e1e1;
+  --ff-header-main: 'Source Sans Pro';
+  --ff-header-big: 'Merriweather';
+  --ff-text-main: 'Inter';
 
-  --color-combos-grid: #9612b376;
+  --clr-primary-purple: #bb86fc;
+  --clr-primary-teal: #03dac5;
+  /* --clr-primary-red: #b2515a; */
+  --clr-primary-red: #d2606a;
+  /* --clr-primary-red: #d29160; */
+  --clr-level-0: #000;
+  --clr-level-05: #070707;
+  --clr-level-1: #121212;
+  --clr-level-2: #1c1c1c;
+  --clr-level-3: #313131;
+  --clr-level-4: #404040;
+  --clr-level-5: #595959;
+  --clr-level-6: #646464;
+  --clr-level-9: #d3d3d3;
+  --clr-level-10: #e1e1e1;
+
   --color-combos-pp: #393939;
   --color-combos-suited: #292929;
   --color-combos-off: #252525;
-
-  --clr-combos-grid: #9612b376;
-  --clr-combos-pp: #393939;
-  --clr-combos-suited: #292929;
-  --clr-combos-off: #252525;
-  --clr-combos-selected: 
-  --clr-combos-text-unselected: #fff;
-  --clr-combos-text-selected: #000;
-
 }
 
 * {
@@ -36,8 +37,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    Helvetica Neue, sans-serif;
+  font-family: var(--ff-text-main);
 }
 
 a {
@@ -46,5 +46,5 @@ a {
 }
 
 a:hover {
-  color: rgb(255, 117, 248);
+  color: var(--clr-primary-red);
 }

@@ -1,7 +1,7 @@
 .headerContainer {
   height: 100px;
-  background-color: #0c0c0c;
-  color: white;
+  background-color: var(--clr-level-05);
+  color: var(--clr-level-10);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,7 +18,7 @@
 .headerMenu {
   display: flex;
   gap: 1.7rem;
-  color: #fff;
+  color: var(--clr-level-10);
   font-size: 1.1rem;
 }
 
@@ -29,48 +29,6 @@
   display: flex;
   gap: 10px;
   align-items: center;
-  color: white;
+  color: var(--clr-level-10);
   position: relative;
-}
-
-.logout {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-  background-color: #525252;
-  padding-inline: 5px;
-  padding-block: 3px;
-  border-radius: 4px;
-}
-
-.logout:hover {
-  background-color: #333;
-}
-
-.login {
-  cursor: pointer;
-  background-color: #525252;
-  padding-inline: 5px;
-  padding-block: 3px;
-  border-radius: 4px;
-}
-
-.login:hover {
-  background-color: #333;
-}
-
-.userOverlay {
-  position: absolute;
-  top: 70px;
-  width: 200px;
-  background-color: #333;
-  border: 1px solid #c49433;
-  border-radius: 0px 0px 10px 10px;
-  padding: 10px;
-  padding-bottom: 15px;
-}
-
-.loginButton {
-  cursor: pointer;
 }

@@ -1,8 +1,8 @@
 .footerContainer {
   height: 100px;
-  background-color: #090909;
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--clr-level-05);
+  color: var(--clr-level-10);
+  font-family: var(--ff-header-main);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -15,7 +15,7 @@
 
 .instagram {
   font-size: 1.6rem;
-  color: white;
+  color: -var(--clr-level-10);
 }
 
 .twitter {
