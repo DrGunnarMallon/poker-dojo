@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.10.15",
+    "@mui/material": "^5.10.15",
     "@next-auth/mongodb-adapter": "^1.1.1",
     "dotenv": "^16.0.3",
     "eslint": "^8.27.0",

@@ -3,6 +3,13 @@ import produce from 'immer';
 import { getNewRange } from '../lib/range';
 import { comboRange } from '../lib/constants';
 
+/*
+
+TODO:
+- Fix the addRangeCombo and removeRangeCombo functions
+
+*/
+
 export const useUserStore = create((set, get) => ({
   userName: '',
   userEmail: '',
@@ -19,11 +26,19 @@ export const useUserStore = create((set, get) => ({
   loginUser: (user) => set({}),
   logoutUser: (user) => set({}),
 
-  updateRangeCombo: (combo, newValue) => {
+  addRangeCombo: (combo) => {
     const index = comboRange.indexOf(combo);
     set(
       produce((state) => {
-        state.ranges[state.path][combo].value = newValue;
+        state.ranges[state.path][combo].value = 1;
+      })
+    );
+  },
+  removeRangeCombo: (combo) => {
+    const index = comboRange.indexOf(combo);
+    set(
+      produce((state) => {
+        state.ranges[state.path][combo].value = 0;
       })
     );
   },

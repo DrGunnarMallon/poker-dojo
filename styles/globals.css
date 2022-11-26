@@ -1,30 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;700&family=Libre+Baskerville:wght@400;700&family=Merriweather:wght@300;400;700&family=Montserrat:wght@100;400;700&family=PT+Serif:wght@400;700&family=Playfair+Display:wght@400;700&family=Raleway:wght@100;400;700&family=Roboto:wght@100;400;700&family=Source+Sans+Pro:wght@200;400;700&family=Source+Serif+Pro:wght@200;400;700&display=swap');
 
-:root {
-  --ff-header-main: 'Source Sans Pro';
-  --ff-header-big: 'Merriweather';
-  --ff-text-main: 'Inter';
-
-  --clr-primary-purple: #bb86fc;
-  --clr-primary-teal: #03dac5;
-  /* --clr-primary-red: #b2515a; */
-  --clr-primary-red: #d2606a;
-  /* --clr-primary-red: #d29160; */
-  --clr-level-0: #000;
-  --clr-level-05: #070707;
-  --clr-level-1: #121212;
-  --clr-level-2: #1c1c1c;
-  --clr-level-3: #313131;
-  --clr-level-4: #404040;
-  --clr-level-5: #595959;
-  --clr-level-6: #646464;
-  --clr-level-9: #d3d3d3;
-  --clr-level-10: #e1e1e1;
-
-  --color-combos-pp: #393939;
-  --color-combos-suited: #292929;
-  --color-combos-off: #252525;
-}
+@import 'definitions.css';
 
 * {
   margin: 0;
@@ -46,5 +22,5 @@ a {
 }
 
 a:hover {
-  color: var(--clr-primary-red);
+  color: var(--clr-primary-owl-pink-500);
 }

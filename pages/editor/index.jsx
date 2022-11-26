@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import RangeMatrix from '../../components/RangeMatrix';
 import { useUserStore } from '../../stores/useUserStore';
@@ -10,7 +10,16 @@ import { ToastContainer, toast } from 'react-toastify';
 import styles from '../../styles/RangeEditor.module.css';
 import 'react-toastify/dist/ReactToastify.css';
 
+import Slider from '@mui/material/Slider';
+import SliderComponent from '../../components/SliderComponent';
+
 function RangeEditor({ session }) {
+  const [rfi, setRfi] = useState(0);
+  const [call, setCall] = useState(0);
+  const [b3cB4, setB3cB4] = useState(0);
+  const [b3B5, setB3B5] = useState(0);
+  const [b3F, setB3F] = useState(0);
+
   const userPath = useUserStore((state) => state.path);
   const userRanges = useUserStore((state) => state.ranges);
   const userChangeAction = useUserStore((state) => state.changeCurrentAction);
@@ -109,15 +118,48 @@ function RangeEditor({ session }) {
           theme="colored"
         />
         <section className={styles.leftPanel}>
-          {Object.keys(allRangeLabels).map((action) => (
-            <div
-              onClick={() => handleActionChange(action)}
-              className={`${userCurrentAction === action ? styles.selected : ''}`}
-              key={action}
-            >
-              {action}
+          <div className={styles.actionPanel}>
+            {Object.keys(allRangeLabels).map((action) => (
+              <div
+                onClick={() => handleActionChange(action)}
+                className={`${userCurrentAction === action ? styles.selected : ''}`}
+                key={action}
+              >
+                {action}
+              </div>
+            ))}
+          </div>
+          <div className={styles.comboPercentages}>
+            <div>
+              {userCurrentAction === 'Open Raise' && (
+                <>
+                  <SliderComponent label={'Open Raise'} sliderColor="primary" sliderChange={setRfi} />
+                  <SliderComponent label={'Call'} sliderColor="secondary" sliderChange={setCall} />
+                </>
+              )}
+              {userCurrentAction === '3-bet' && (
+                <>
+                  <SliderComponent label={'3-Bet / Call 4-bet'} sliderColor="green" sliderChange={setB3cB4} />
+                  <SliderComponent label={'3-Bet / 5-Bet'} sliderColor="pink" sliderChange={setB3B5} />
+                  <SliderComponent label={'3-Bet / Fold'} sliderColor="blue" sliderChange={setB3F} />
+                </>
+              )}
+              {userCurrentAction === 'Call 3-bet' && (
+                <>
+                  <SliderComponent label={'4-Bet'} sliderColor="pink" />
+                  <SliderComponent label={'Call 3-Bet'} sliderColor="green" />
+                </>
+              )}
+              {userCurrentAction === 'Defend BB' && (
+                <>
+                  <SliderComponent label={'Call'} sliderColor="green" />
+                  <SliderComponent label={'3-Bet / Call 4-bet'} sliderColor="yellow" />
+                  <SliderComponent label={'3-Bet / 5-Bet'} sliderColor="pink" />
+                  <SliderComponent label={'3-Bet / Fold'} sliderColor="blue" />
+                </>
+              )}
             </div>
-          ))}
+          </div>
         </section>
         <section className={styles.centerPanel}>
           <RangeMatrix />

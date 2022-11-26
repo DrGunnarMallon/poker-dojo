@@ -26,7 +26,7 @@
 
 .saveContainer > div:hover {
   background-color: var(--clr-primary-red);
-  color: var(--clr-level-0);
+  /* color: var(--clr-level-0); */
 }
 
 .leftPanel {
@@ -35,9 +35,39 @@
   gap: 1rem;
   width: 200px;
   align-items: flex-end;
+  justify-content: space-between;
 }
 
-.leftPanel > div {
+.actionPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 200px;
+  align-items: flex-end;
+}
+
+.comboPercentages {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 200px;
+  align-items: flex-end;
+}
+
+.comboPercentages > div {
+  /* background-color: var(--clr-level-3); */
+  /* width: 150px; */
+  /* padding-block: 5px;
+  border-radius: 3px; */
+  text-align: center;
+}
+
+/* .comboPercentages > div:hover {
+  background-color: var(--clr-primary-red);
+  color: var(--clr-level-1);
+} */
+
+.actionPanel > div {
   background-color: var(--clr-level-3);
   width: 150px;
   padding-block: 5px;
@@ -45,9 +75,9 @@
   text-align: center;
 }
 
-.leftPanel > div:hover {
+.actionPanel > div:hover {
   background-color: var(--clr-primary-red);
-  color: var(--clr-level-1);
+  /* color: var(--clr-level-1); */
 }
 
 .rightPanel {
@@ -68,7 +98,7 @@
 
 .rightPanel > div:hover {
   background-color: var(--clr-primary-red);
-  color: var(--clr-level-1);
+  /* color: var(--clr-level-1); */
 }
 
 .centerPanel {
@@ -81,7 +111,7 @@
 
 .selected {
   background-color: var(--clr-primary-teal) !important;
-  color: var(--clr-level-1);
+  /* color: var(--clr-level-1); */
 }
 
 .title {

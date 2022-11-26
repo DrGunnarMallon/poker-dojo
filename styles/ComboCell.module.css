@@ -25,4 +25,5 @@
 
 .selected {
   background-color: var(--clr-primary-red);
+  color: var(--clr-level-0);
 }

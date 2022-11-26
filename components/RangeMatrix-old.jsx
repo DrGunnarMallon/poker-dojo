@@ -5,38 +5,41 @@ import ComboCell from './ComboCell';
 import { comboRange } from '../lib/constants';
 import { useUserStore } from '../stores/useUserStore';
 
-/*
-
-TODO:
-- update "isComboInRange" function
-- get percentage values and update combo
-
-*/
-
 function RangeMatrix({ editable }) {
   const user = useUserStore();
   const mouseState = useMouseStore();
 
-  const isComboInRange = (combo) => (user.ranges[user.path][combo].value > 0 ? true : false);
+  //const isComboInRange = (combo) => (user.ranges[user.path][combo].value > 0 ? true : false);
 
   const handleComboChange = (e) => {
     if (user.ranges[user.path]) {
-      if (mouseState.mouse === true) {
-        mouseState.add ? user.addRangeCombo(e.target.innerText) : user.removeRangeCombo(e.target.innerText);
-      }
+      // if (mouseState.mouse === true) {
+      //   mouseState.add ? user.addRangeCombo(e.target.innerText) : user.removeRangeCombo(e.target.innerText);
+      // }
+      /*
+
+        - Get Breakdown For Ranges
+        - Change Range to new breakdown
+
+      */
     }
   };
 
   const handleMouseDown = (e) => {
     if (user.ranges[user.path]) {
       mouseState.mouseDown();
-      if (isComboInRange(e.target.innerText)) {
-        mouseState.deleting();
-        user.removeRangeCombo(e.target.innerText);
-      } else {
-        mouseState.adding();
-        user.addRangeCombo(e.target.innerText);
-      }
+      /*
+
+        user.updateRangeCombo (newValue);
+
+      */
+      // if (isComboInRange(e.target.innerText)) {
+      //   mouseState.deleting();
+      //   user.removeRangeCombo(e.target.innerText);
+      // } else {
+      //   mouseState.adding();
+      //   user.addRangeCombo(e.target.innerText);
+      // }
     }
   };
 
